@@ -5,3 +5,10 @@ C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdvent
 C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.csproj.CoreCompileInputs.cache
 C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.exe
 C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.pdb
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\bin\Debug\SimplonAdventure.exe.config
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\bin\Debug\SimplonAdventure.exe
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\bin\Debug\SimplonAdventure.pdb
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.csprojResolveAssemblyReference.cache
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.csproj.CoreCompileInputs.cache
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.exe
+C:\Git\Simplon\SimplonAdventure\SimplonAdventure\obj\Debug\SimplonAdventure.pdb

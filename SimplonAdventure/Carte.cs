@@ -61,7 +61,6 @@ namespace SimplonAdventure
              PosY = RandomHelper.GetRandom(0, _dimension - 1);
             
             Lieu fin = _carte[finX, finY];
-
             fin.EstFin = true;
             fin.Monstre=new Monstre
             {
