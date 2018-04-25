@@ -57,17 +57,36 @@ namespace SimplonAdventure
 
             var finX = RandomHelper.GetRandom(0, _dimension - 1);
             var finY = RandomHelper.GetRandom(0, _dimension - 1);
+            var marchandX = RandomHelper.GetRandom(0, _dimension - 1);
+            var marchandY = RandomHelper.GetRandom(0, _dimension - 1);
              PosX = RandomHelper.GetRandom(0, _dimension - 1);
              PosY = RandomHelper.GetRandom(0, _dimension - 1);
-            
+
+            while (finX == PosX && finY == PosY)
+            {
+                PosX = RandomHelper.GetRandom(0, _dimension - 1);
+                PosY = RandomHelper.GetRandom(0, _dimension - 1);
+            }
+
+            while (finX == marchandX && finY == marchandY && PosX == marchandX && PosY == marchandY)
+            {
+                marchandX = RandomHelper.GetRandom(0, _dimension - 1);
+                marchandY = RandomHelper.GetRandom(0, _dimension - 1);
+            }
+
+
             Lieu fin = _carte[finX, finY];
             fin.EstFin = true;
             fin.Monstre=new Monstre
             {
                 Pv = 250,
-                DegatMax = 45,
+                DegatMax = 25,
                 Nom = "George Abitbol"
             };
+
+            Lieu marchand = _carte[marchandX, marchandY];
+            marchand.EstMarchant = true;
+            marchand.EstCaseSoin = false;
 
             Console.WriteLine($"La carte a été générée avec {nombreVide} cases vides, {nombreMonstres} monstres et {nombreHeal} cases de soin");
             Console.WriteLine($"Départ à la case [{PosX},{PosY}], princesse à la case [{finX},{finY}]");
@@ -79,12 +98,14 @@ namespace SimplonAdventure
             switch (direction.ToLower())
             {
                 case "n":
+                case "z":
                     if (PosY > 0)
                     {
                          PosY--;
                         return true;
                     }
                     break;
+                case "d":
                 case "e":
                     if (PosX < _dimension-1)
                     {
@@ -99,6 +120,7 @@ namespace SimplonAdventure
                         return true;
                     }
                     break;
+                case "q":
                 case "o":
                     if (PosX > 0)
                     {
@@ -106,11 +128,6 @@ namespace SimplonAdventure
                         return true;
                     }
                     break;
-                //case "m":
-                //    Console.WriteLine(this.ToString());
-                //    var dir = Console.ReadLine();
-                //    Deplacer(dir);
-                //    return true;
                 default:
                     throw new InvalidOperationException();
             }
@@ -143,6 +160,17 @@ namespace SimplonAdventure
             }
 
             return carte;
+        }
+
+        public void RevealCarte()
+        {
+            for (int j = 0; j < _dimension; j++)
+            {
+               for (int k = 0; k < _dimension; k++)
+               {
+                   _carte[j, k].EstVisible = true;
+               }
+            }
         }
     }
 }

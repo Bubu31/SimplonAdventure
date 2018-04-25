@@ -29,7 +29,8 @@ namespace SimplonAdventureCore.Helpers
             "Sagat",
             "Sniper Wolf",
             "Zira",
-            "Waluigi"
+            "Waluigi",
+            "Bouyoum"
         };
 
         static List<String> _prenoms = new List<string>
@@ -52,7 +53,7 @@ namespace SimplonAdventureCore.Helpers
             "Hugo",
             "Jean-Claude",
             "Maxime",
-            "Tristant"
+            "Tristan"
         };
 
         public static string GetName()

@@ -13,14 +13,14 @@ namespace SimplonAdventure
     {
         public Monstre() : base()
         {
-            Pv = RandomHelper.GetRandom(5, 100);
+            Pv = RandomHelper.GetRandom(5, 50);
             Nom = NameGeneratorHelper.GetName();
-            DegatMax = RandomHelper.GetRandom(5, 35);
+            DegatMax = RandomHelper.GetRandom(0, 50);
         }
 
         public void Bagarre(Personnage cible, bool infoCombat)
         {
-            var degatJoueur = RandomHelper.GetRandom(1, DegatMax);
+            var degatJoueur = RandomHelper.GetRandom(0, DegatMax);
             if (infoCombat)
             {
                 Console.WriteLine($"Le monstre attaque !");

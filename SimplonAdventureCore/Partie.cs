@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using SimplonAdventure.Helpers;
 using SimplonAdventureCore;
@@ -11,11 +13,16 @@ namespace SimplonAdventure
     public class Partie
     {
         private bool _infoCombat { get; set; }
+        private Stopwatch _dureePartie { get; set; }
 
         public Carte Carte { get; set; }
 
         public Joueur Joueur { get; set; }
 
+        public Partie()
+        {
+            _dureePartie = new Stopwatch();
+        }
 
         public void Parametrer()
         {
@@ -32,15 +39,15 @@ namespace SimplonAdventure
             {
                 case "1":
                     dimension = 3;
-                    pvMax = 150;
+                    pvMax = 100;
                     break;
                 case "2":
                     dimension = 10;
-                    pvMax = 100;
+                    pvMax = 150;
                     break;
                 case "3":
                     dimension = 35;
-                    pvMax = 250;
+                    pvMax = 200;
                     break;
                 default:
                     dimension = 10;
@@ -74,6 +81,7 @@ namespace SimplonAdventure
 
         public void Lancer()
         {
+            _dureePartie.Start();
             while (Joueur.EstVivant)
             {
                 Console.Clear();
@@ -86,26 +94,30 @@ namespace SimplonAdventure
                         Soin();
                     }
 
+                    if (Carte.Position.EstVisite)
+                    {
+                        DejaVisite();
+                    }
+
                     if (Carte.Position.EstFin)
                     {
                         BagarreFinale();
                         break;
                     }
 
-                    if (Carte.Position.EstVisite)
+                    if (Carte.Position.EstMarchant)
                     {
-                        DejaVisite();
+                        Marchand();
                     }
                     else if (Carte.Position.Monstre != null)
                     {
-                        Console.WriteLine($"Oh non ! Il y a un monstre ({Carte.Position.Monstre}) sur votre route, le combat est innévitable !");
-                        Bagarre();
+                        if (Carte.Position.Monstre.EstVivant)
+                            Bagarre();
                         if (!Joueur.EstVivant) continue;
                     }
 
                     Carte.Position.EstVisite = true;
                     Deplacement();
-
                     Console.Clear();
                 }
                 catch (Exception)
@@ -128,7 +140,7 @@ namespace SimplonAdventure
         {
             Console.WriteLine("\n======= Déplacement =======");
             Console.WriteLine("Veuillez utiliser les points cardinaux pour vous déplacer");
-            Console.WriteLine("N: Nord   E: Est   S: Sud  O: Ouest   M: Carte");
+            Console.WriteLine("N: Nord   E: Est   S: Sud  O: Ouest  (ou ZQSD pour les G@merz)");
             string direction = Console.ReadLine();
 
             if (!Carte.Deplacer(direction))
@@ -141,16 +153,24 @@ namespace SimplonAdventure
 
         private void Bagarre()
         {
+            Console.WriteLine($"Oh non ! Il y a un monstre ({Carte.Position.Monstre}) sur votre route, le combat est innévitable !");
             Console.WriteLine(_infoCombat ? "Appuyez sur ENTER pour commencer le combat" : "Appuyez sur ENTER pour simuler le combat");
             Console.ReadLine();
+
 
             var combat = new Combat(Joueur, Carte.Position.Monstre);
             combat.Commencer(_infoCombat);
 
+            Joueur.AddExperience(Carte.Position.Monstre.DegatMax);
             RefreshInfo();
-            Console.WriteLine(Joueur.Pv < 0
-                ? "Le joueur est mort. Snif. RT si t'es triste."
-                : "Il est mort ! Vous pouvez continuer.");
+            if (Joueur.Pv > 0)
+            {
+                Console.WriteLine("Il est mort ! Vous pouvez continuer.");
+            }
+            else
+            {
+                Console.WriteLine("Le joueur est mort. Snif. RT si t'es triste.");
+            }
 
         }
 
@@ -166,6 +186,12 @@ namespace SimplonAdventure
             RefreshInfo();
             Console.WriteLine("Vous vous sentez mieux");
         }
+        private void Marchand()
+        {
+            Carte.RevealCarte();
+            RefreshInfo();
+            Console.WriteLine("Un vieux monsieur vous donne la carte de l'île !");
+        }
 
         private void BagarreFinale()
         {
@@ -176,10 +202,11 @@ namespace SimplonAdventure
         private void RefreshInfo()
         {
             Console.Clear();
+            Console.WriteLine($"Durée de la partie : {(int)_dureePartie.Elapsed.TotalMinutes} min");
             Joueur.DisplayInformation(Carte);
             Console.WriteLine(Carte);
             Console.WriteLine("==============");
         }
-    
+
     }
 }

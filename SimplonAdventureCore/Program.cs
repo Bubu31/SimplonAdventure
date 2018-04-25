@@ -12,12 +12,18 @@ namespace SimplonAdventure
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
+            string retry = string.Empty;
 
-            Partie partie=new Partie();
-            partie.Parametrer();
-
-            partie.Lancer();
-            Console.ReadLine();
+            while (retry.ToLower() != "q")
+            {
+                Console.Clear();
+                Partie partie = new Partie();
+                partie.Parametrer();
+                partie.Lancer();
+                Console.WriteLine();
+                Console.WriteLine("Appuyez sur une touche pour recommencer");
+                Console.ReadLine();
+            }
         }
     }
 }

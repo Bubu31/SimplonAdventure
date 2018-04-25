@@ -30,7 +30,10 @@ namespace SimplonAdventureCore
                 //Attaque joueur
                 Joueur.Bagarre(Monstre, infoCombat);
 
-                if (Monstre.Pv <= 0) continue;
+                if (Monstre.Pv <= 0)
+                {
+                    continue;
+                }
 
                 Monstre.Bagarre(Joueur, infoCombat);
 
