@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplonAdventure", "SimplonAdventure\SimplonAdventure.csproj", "{F3D14559-7F6A-4CD4-B3C8-E76C614DE2F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplonAdventureBeta", "SimplonAdventureBeta\SimplonAdventureBeta.csproj", "{E40A019F-7043-4082-A0B4-30B2A9D58D2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F3D14559-7F6A-4CD4-B3C8-E76C614DE2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D14559-7F6A-4CD4-B3C8-E76C614DE2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D14559-7F6A-4CD4-B3C8-E76C614DE2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40A019F-7043-4082-A0B4-30B2A9D58D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40A019F-7043-4082-A0B4-30B2A9D58D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40A019F-7043-4082-A0B4-30B2A9D58D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40A019F-7043-4082-A0B4-30B2A9D58D2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,7 +18,7 @@ namespace SimplonAdventure
             string difficulte = "";
             while (difficulte != "1" && difficulte != "2" && difficulte != "3")
             {
-                Console.WriteLine("Veuillez entrer une difficulté entre 1(facile) et 3(difficile)");
+                Console.WriteLine("Veuillez entrer une difficulté entre 1 (facile) et 3 (difficile) :");
                 difficulte = Console.ReadLine();
             }
 
@@ -50,7 +50,7 @@ namespace SimplonAdventure
 
             while (string.IsNullOrEmpty(NomDuJoueur))
             {
-                Console.WriteLine("Veuillez entrer le nom du joueur");
+                Console.WriteLine("Veuillez entrer le nom du joueur : ");
                 NomDuJoueur = Console.ReadLine();
             }
 

@@ -1,0 +1,7 @@
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\bin\Debug\SimplonAdventureBeta.exe.config
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\bin\Debug\SimplonAdventureBeta.exe
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\bin\Debug\SimplonAdventureBeta.pdb
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\obj\Debug\SimplonAdventureBeta.csprojResolveAssemblyReference.cache
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\obj\Debug\SimplonAdventureBeta.csproj.CoreCompileInputs.cache
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\obj\Debug\SimplonAdventureBeta.exe
+C:\Git\Equadex\Simplon\SimplonAdventure\SimplonAdventureBeta\obj\Debug\SimplonAdventureBeta.pdb
