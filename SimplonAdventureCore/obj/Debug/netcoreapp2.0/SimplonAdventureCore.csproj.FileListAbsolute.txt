@@ -1,0 +1,11 @@
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\bin\Debug\netcoreapp2.0\SimplonAdventureCore.deps.json
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\bin\Debug\netcoreapp2.0\SimplonAdventureCore.runtimeconfig.json
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\bin\Debug\netcoreapp2.0\SimplonAdventureCore.runtimeconfig.dev.json
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\bin\Debug\netcoreapp2.0\SimplonAdventureCore.dll
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\bin\Debug\netcoreapp2.0\SimplonAdventureCore.pdb
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\obj\Debug\netcoreapp2.0\SimplonAdventureCore.csproj.CoreCompileInputs.cache
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\obj\Debug\netcoreapp2.0\SimplonAdventureCore.AssemblyInfoInputs.cache
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\obj\Debug\netcoreapp2.0\SimplonAdventureCore.AssemblyInfo.cs
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\obj\Debug\netcoreapp2.0\SimplonAdventureCore.dll
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\obj\Debug\netcoreapp2.0\SimplonAdventureCore.pdb
+C:\Git\Simplon\SimplonAdventure\SimplonAdventureCore\obj\Debug\netcoreapp2.0\SimplonAdventureCore.csprojResolveAssemblyReference.cache
